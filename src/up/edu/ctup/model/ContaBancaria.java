@@ -6,16 +6,50 @@ import java.util.List;
 public class ContaBancaria  {
 	
 	
-	private int numero_conta;
+	private Integer numero_conta;
 	
 	
-	List<Conta> contascliente = new ArrayList<Conta>();
+	private List<Conta> contascliente = new ArrayList<Conta>();
 	
 	 
 
     
     
-    public float transferir_dinheiro(float valor) {
+ 
+
+	public Integer getNumero_conta() {
+		return numero_conta;
+	}
+
+
+
+
+
+	public void setNumero_conta(Integer numero_conta) {
+		this.numero_conta = numero_conta;
+	}
+
+
+
+
+
+	public List<Conta> getContascliente() {
+		return contascliente;
+	}
+
+
+
+
+
+	public void setContascliente(List<Conta> contascliente) {
+		this.contascliente = contascliente;
+	}
+
+
+
+
+
+	public float transferir_dinheiro(float valor) {
 		
 		
 		return valor;
