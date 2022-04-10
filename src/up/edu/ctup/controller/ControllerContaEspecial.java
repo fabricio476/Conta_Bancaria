@@ -3,16 +3,16 @@ package up.edu.ctup.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import up.edu.ctup.model.ContaEspecial;
+import up.edu.ctup.model.Credito;
 
 public class ControllerContaEspecial {
 
 	
 	
-	public List<ContaEspecial> listcontaespecial = new ArrayList<ContaEspecial>();
+	public List<Credito> listcontaespecial = new ArrayList<Credito>();
 	
 	
-      public void cadastrarConta(ContaEspecial cliente) { //quardar o objeto na lista
+      public void cadastrarConta(Credito cliente) { //quardar o objeto na lista
 		
 		listcontaespecial.add(cliente);
 	}

@@ -5,21 +5,21 @@ import java.util.List;
 
 
 import up.edu.ctup.model.ContaBancaria;
-import up.edu.ctup.model.ContaPoupança;
+import up.edu.ctup.model.Poupanca;
 
 
 public class ControllerContas {
 	
 	
 	
-	static ContaPoupança polp = new ContaPoupança();
+	static Poupanca polp = new Poupanca();
 	static int num=1000; // numero inicial da conta bancaria
 	static ContaBancaria conta = new ContaBancaria(); //para utilizar as funções da classe contabancaria
 
 	
 	public List<ContaBancaria> listacontas = new ArrayList<ContaBancaria>(); //criar a lista principal
 	
-	public List<ContaPoupança> listacontapolp = new ArrayList<ContaPoupança>(); //lista poupanca
+	public List<Poupanca> listacontapolp = new ArrayList<Poupanca>(); //lista poupanca
 	
 	
 	
@@ -30,7 +30,7 @@ public class ControllerContas {
 		listacontas.add(cliente);
 	}
 
-     public void cadastrarContapoupanca(ContaPoupança cliente) { //quardar o objeto na lista polpança
+     public void cadastrarContapoupanca(Poupanca cliente) { //quardar o objeto na lista polpança
 		
 		listacontapolp.add(cliente);
 	}

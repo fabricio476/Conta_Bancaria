@@ -1,9 +1,18 @@
 package up.edu.ctup.model;
 
-public class ContaPoupança extends ContaBancaria{
+import up.edu.ctup.constantes.NomeContas;
+
+public class Poupanca extends Conta{
+	
 	
 	private int dia_de_rendimento;
 	private float taxa= (float) 0.003;
+	
+	public Poupanca() {
+		
+		this.Tipo = NomeContas.POUPANCA;
+		
+	}
 	
 
 
@@ -26,13 +35,14 @@ public class ContaPoupança extends ContaBancaria{
 		this.taxa = taxa;
 	}
 
+	
 	public void calcularNovoSaldo(float dinheiro) { //rendimento da poupaça
 		
 		float valor;
 		
 		valor= dinheiro*taxa;
 		
-		this.saldo = getSaldo() + valor;
+		this.saldo = this.saldo + valor;
 		
 	}
 	

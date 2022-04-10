@@ -5,22 +5,24 @@ import java.util.Scanner;
 import up.edu.ctup.controller.ControllerContaEspecial;
 import up.edu.ctup.controller.ControllerContas;
 import up.edu.ctup.model.ContaBancaria;
-import up.edu.ctup.model.ContaEspecial;
-import up.edu.ctup.model.ContaPoupança;
+import up.edu.ctup.model.Credito;
+import up.edu.ctup.model.Poupanca;
 
 
-public class Contas {
+public class Principal {
 
 	static ControllerContaEspecial controlespecial = new ControllerContaEspecial();
 	static Scanner scan = new Scanner(System.in);
 	static ContaBancaria conta = new ContaBancaria();
-	static ContaEspecial contaespecial = new ContaEspecial();
-	static ContaPoupança contapoupanca = new ContaPoupança();
+	static Credito contaespecial = new Credito();
+	static Poupanca contapoupanca = new Poupanca();
 	static ControllerContas control = new ControllerContas();
 	static int nconta=0,pcliente,P,M;
 	
 	
 	public static void main(String[] args) {
+		
+		
 			
 		menuinicial();	// menu inicial onde o programa começa
 		
@@ -153,8 +155,8 @@ public class Contas {
 	public static void cadcliente() { // cadastro cliente
 		
 		conta = new ContaBancaria();
-		contaespecial = new ContaEspecial();
-		contapoupanca = new ContaPoupança();
+		contaespecial = new Credito();
+		contapoupanca = new Poupanca();
 		
          nconta = control.numeroConta(); // gerar o numero da conta do cliente
 		
