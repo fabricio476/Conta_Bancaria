@@ -49,7 +49,7 @@ public class Principal {
 			System.out.println("SENHA :");
 			cliente.setSenha(scan.next());
 			
-			if(controllerContaCliente.autenticar(cliente)) {
+			if(cliente.autenticar()) {
 				
 				
 				menu_Cliente(); // segundo menu dentro da conta do cliente 

@@ -1,6 +1,8 @@
 package up.edu.ctup.model;
 
-public class Cliente extends Pessoa{
+import up.edu.ctup.interfaces.PermitirAcesso;
+
+public class Cliente extends Pessoa implements PermitirAcesso{
 
 	
 	private ContaBancaria contaBancaria;
@@ -20,6 +22,13 @@ public class Cliente extends Pessoa{
 
 	public void setContaBancaria(ContaBancaria contaBancaria) {
 		this.contaBancaria = contaBancaria;
+	}
+
+
+	@Override
+	public boolean autenticar() {
+		
+		return this.email.equals("admin") && this.senha.equals("admin");
 	}
 	
 	
