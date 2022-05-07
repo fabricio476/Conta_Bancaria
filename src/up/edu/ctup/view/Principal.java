@@ -13,8 +13,8 @@ public class Principal {
 
 	static Scanner scan = new Scanner(System.in);
 	public static Cliente cliente;
-	static ControllerContaBancariaCliente controllerContaCliente = new ControllerContaBancariaCliente();
 	
+	static ControllerContaBancariaCliente controller = new ControllerContaBancariaCliente();
 	
 	public static void main(String[] args) {
 		
@@ -75,14 +75,34 @@ public class Principal {
 			
 			
 					
-			//cliente.autenticar(ControllerContaBancariaCliente.getClientes();
+			
 			
 			if(new Cliente(email,senha).autenticar(ControllerContaBancariaCliente.getClientes())  ) {
 			
 			cliente = new Cliente(email,senha);
+			
 				
-			cliente = controllerContaCliente.buscarCliente(cliente); /*metodo para retornar os atributos do cliete autenticado*/
+			cliente = controller.buscarCliente(cliente); /*metodo para retornar os atributos do cliete autenticado*/
 				
+			if(cliente != null) {
+				
+				System.out.println("Nome : "+cliente.getNome() + " | Numero Conta : "+ cliente.getContaBancaria().getNumero_conta());
+				
+			}else {
+				
+				System.err.println("\t ** Perfil Admin **\n");
+				
+				System.out.println("Qual o numero da conta do cliente?");
+				Integer nConta = scan.nextInt();
+				
+				
+				
+				cliente = new Cliente().acesso(nConta, ControllerContaBancariaCliente.getClientes());
+				
+			}
+			
+			
+			
 				menu_Cliente(); // segundo menu dentro da conta do cliente 
 				
 			}else {
@@ -172,20 +192,7 @@ public class Principal {
 	}//----
 
 	
-	
-	public static void criar_Conta() { // cadastro cliente
-		
-		
-		System.out.println("Digite nome: ");
-		String Nome= scan.next();
-		
-		System.out.println("Senha: ");
-		String Senha = scan.next();
-		
-		
-		
-	
-	}//----
+
 
 	
 	

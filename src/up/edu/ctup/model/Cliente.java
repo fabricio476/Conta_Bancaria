@@ -78,7 +78,7 @@ public class Cliente extends Pessoa implements PermitirAcesso{
 		if( dados.containsKey(numero_conta)) {
 			
 			
-			return (Cliente) dados.get(numero_conta);
+			return  (Cliente) dados.get(numero_conta);
 			
 			
 		}
