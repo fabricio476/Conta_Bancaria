@@ -53,7 +53,15 @@ public abstract class Conta {
 	
 	
     public void depositar_dinheiro(float valor) {
+    	
+    	
+    	if(valor != 0 && valor > 0) {
+    		
+    		this.saldo += valor;
+    		
+    	}
 		
+    	
 		
 	}
 	

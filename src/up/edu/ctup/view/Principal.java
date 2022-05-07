@@ -185,7 +185,24 @@ public class Principal {
 		
 		case 2:
 			
-          
+			float valor = cliente.getContaBancaria().getContascliente().get(1).getSaldo();
+			
+			System.out.println("Qual o Valor do deposito?");
+			cliente.getContaBancaria().getContascliente().get(1).depositar_dinheiro(scan.nextFloat());
+			
+			
+			
+			if(valor != cliente.getContaBancaria().getContascliente().get(1).getSaldo() ) {
+				
+				System.out.println("Deposito Realizado com Sucesso");
+				
+			}else {
+				
+				System.err.println("Falha ao Realizar o Deposito ");
+				
+			}
+			
+			 
 			
 		break;
 		
@@ -199,7 +216,7 @@ public class Principal {
 			
 		case 4:
 			
-		
+		  System.out.println(" SALDO : "+cliente.getContaBancaria().getContascliente().get(1).getSaldo());
 			
 		break;
 			
