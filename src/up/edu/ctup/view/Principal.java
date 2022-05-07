@@ -209,6 +209,24 @@ public class Principal {
 			
 		case 3:
 			
+			float valoor = cliente.getContaBancaria().getContascliente().get(1).getSaldo();
+			
+			System.out.println("Informe o Valor do Saque ");
+			cliente.getContaBancaria().getContascliente().get(1).sacar_dinheiro(scan.nextFloat());
+			
+			if(valoor > cliente.getContaBancaria().getContascliente().get(1).getSaldo()) {
+				
+				
+				System.out.println("SAQUE realizado com sucesso");
+				
+			}else {
+				
+				
+				System.err.println("Erro ao SACAR");
+				
+			}
+			
+			
 		
 			
 		break;

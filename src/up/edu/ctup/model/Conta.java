@@ -48,6 +48,12 @@ public abstract class Conta {
 
 	public void sacar_dinheiro(float valor) {
 		
+		if(valor <= this.saldo && valor >0) {
+			
+			this.saldo -= valor;
+			
+		}
+		
 		
 	}
 	
