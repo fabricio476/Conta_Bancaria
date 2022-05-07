@@ -13,6 +13,15 @@ public class Cliente extends Pessoa implements PermitirAcesso{
 		
 		
 	}
+	
+	
+
+
+	public Cliente(ContaBancaria contaBancaria) {
+		this.contaBancaria = contaBancaria;
+	}
+
+
 
 
 	public ContaBancaria getContaBancaria() {
@@ -29,6 +38,14 @@ public class Cliente extends Pessoa implements PermitirAcesso{
 	public boolean autenticar() {
 		
 		return this.email.equals("admin") && this.senha.equals("admin");
+	}
+
+
+
+
+	@Override
+	public String toString() {
+		return "Cliente [contaBancaria=" + contaBancaria + "]";
 	}
 	
 	

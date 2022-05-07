@@ -5,13 +5,14 @@ import java.util.Scanner;
 
 import up.edu.ctup.controller.ControllerContaBancariaCliente;
 import up.edu.ctup.model.Cliente;
+import up.edu.ctup.model.ContaBancaria;
 
 
 public class Principal {
 
 
 	static Scanner scan = new Scanner(System.in);
-	static Cliente cliente;
+	public static Cliente cliente;
 	static ControllerContaBancariaCliente controllerContaCliente = new ControllerContaBancariaCliente();
 	
 	
@@ -36,8 +37,29 @@ public class Principal {
 		
 		if(op == 1) {
 			
+			cliente = new Cliente(new ContaBancaria());
+			
+			System.out.println("Nome :");
+			cliente.setNome(scan.next());
+			
+			System.out.println("Cpf :");
+			cliente.setCpf(scan.next());
+			
+			System.out.println("Email: :");
+			cliente.setEmail(scan.next());
+			
+			System.out.println("Senha :");
+			cliente.setSenha(scan.next());
 			
 			
+			if(controllerContaCliente.salvarCliente(cliente)) {
+				
+				System.out.println("Cliente Cadastrado com Sucesso !!");
+				
+			}else {
+				
+				System.out.println("ERRO ao cadastrar Cliente !!");
+			}
           
 			
 		}else if(op == 2) {
