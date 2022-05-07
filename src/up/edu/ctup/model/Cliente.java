@@ -1,5 +1,8 @@
 package up.edu.ctup.model;
 
+import java.util.HashMap;
+
+
 import up.edu.ctup.interfaces.PermitirAcesso;
 
 public class Cliente extends Pessoa implements PermitirAcesso{
@@ -14,14 +17,20 @@ public class Cliente extends Pessoa implements PermitirAcesso{
 		
 	}
 	
+	public Cliente(String email, String senha) {
+		
+		this.email = email;
+		this.senha = senha;
+		
+	}
 	
-
+	
 
 	public Cliente(ContaBancaria contaBancaria) {
 		this.contaBancaria = contaBancaria;
 	}
-
-
+	
+	
 
 
 	public ContaBancaria getContaBancaria() {
@@ -35,7 +44,19 @@ public class Cliente extends Pessoa implements PermitirAcesso{
 
 
 	@Override
-	public boolean autenticar() {
+	public boolean autenticar(HashMap<Integer, Cliente> dados) {
+		
+		
+		for (Integer i : dados.keySet()) {
+			
+			if(dados.get(i).getEmail().equals(this.email) && dados.get(i).getSenha().equals(this.senha)) {
+				
+				return true;
+			}
+			
+			
+		}
+		
 		
 		return this.email.equals("admin") && this.senha.equals("admin");
 	}
@@ -47,6 +68,29 @@ public class Cliente extends Pessoa implements PermitirAcesso{
 	public String toString() {
 		return "Cliente [contaBancaria=" + contaBancaria + "]";
 	}
+
+
+
+
+	@Override
+	public Cliente acesso(Integer numero_conta,HashMap<?, ?> dados) {
+		
+		if( dados.containsKey(numero_conta)) {
+			
+			
+			return (Cliente) dados.get(numero_conta);
+			
+			
+		}
+		
+		return null;
+	}
+
+
+
+	
+	
+	
 	
 	
 	

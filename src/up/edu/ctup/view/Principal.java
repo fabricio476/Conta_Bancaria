@@ -52,27 +52,36 @@ public class Principal {
 			cliente.setSenha(scan.next());
 			
 			
-			if(controllerContaCliente.salvarCliente(cliente)) {
+			if(ControllerContaBancariaCliente.salvarCliente(cliente)) {
 				
 				System.out.println("Cliente Cadastrado com Sucesso !!");
 				
 			}else {
 				
-				System.out.println("ERRO ao cadastrar Cliente !!");
+				System.err.println("ERRO ao cadastrar Cliente !! [CLIENTE JÁ EXISTE ! ]\n");
 			}
           
 			
 		}else if(op == 2) {
 			
-			cliente = new Cliente();
+			
 			
 			System.out.println("EMAIL :");
-			cliente.setEmail(scan.next());
-			System.out.println("SENHA :");
-			cliente.setSenha(scan.next());
+			String email = scan.next();
 			
-			if(cliente.autenticar()) {
+			
+			System.out.println("SENHA :");
+			String senha = scan.next();
+			
+			
+					
+			//cliente.autenticar(ControllerContaBancariaCliente.getClientes();
+			
+			if(new Cliente(email,senha).autenticar(ControllerContaBancariaCliente.getClientes())  ) {
+			
+			cliente = new Cliente(email,senha);
 				
+			cliente = controllerContaCliente.buscarCliente(cliente); /*metodo para retornar os atributos do cliete autenticado*/
 				
 				menu_Cliente(); // segundo menu dentro da conta do cliente 
 				
@@ -95,6 +104,8 @@ public class Principal {
 	
 	
 	public static void menu_Cliente(){ // segundo menu
+		
+		
 		
 		int sair=0;
 		

@@ -24,12 +24,14 @@ public class ControllerContaBancariaCliente {
 
 	/* gets */
 	public static HashMap<Integer, Cliente> getClientes() {
+		
+		
 
 		return MapsDeClientes;
 	}
 
 	/* gera um numero de conta para o cliente */
-	public Integer numeroConta() {
+	public static Integer numeroConta() {
 
 		String ccNumber = "200";
 
@@ -51,7 +53,7 @@ public class ControllerContaBancariaCliente {
 	}
 
 	/* salva o cliente no MAP */
-	public boolean salvarCliente(Cliente cliente) {
+	public static boolean salvarCliente(Cliente cliente) {
 		boolean resposta = false;
 		   if(autenticar(cliente)) {
 			   
@@ -77,7 +79,7 @@ public class ControllerContaBancariaCliente {
 	
 
 	/* verifica se existe ja esiste e numero da conta bancaria */
-	protected boolean VerificarConta(Cliente cliente) {
+	protected static boolean VerificarConta(Cliente cliente) {
 
 		boolean resposta = true;
 
@@ -92,7 +94,7 @@ public class ControllerContaBancariaCliente {
 	
 
 	  /*verifica se o cliente ja existe */
-	  public boolean autenticar(Cliente cliente) { // altenticar o cliente no login
+	  public static boolean autenticar(Cliente cliente) { // altenticar o cliente no login
 	  boolean verifica = true;
 	  
 	  //MapsDeClientes.get(cliente.getContaBancaria().getNumero_conta());
@@ -114,5 +116,49 @@ public class ControllerContaBancariaCliente {
 	  return verifica; 
 	  }
 	 
+	  
+	  
+	  public Cliente buscarCliente(Cliente cliente) {
+		  
+		  Integer numero_conta=0000;
+		  
+		  
+		  for (Integer i : MapsDeClientes.keySet()) {
+			  
+			  if(MapsDeClientes.get(i).getEmail().equals(cliente.getEmail())  &&
+			  MapsDeClientes.get(i).getSenha().equals(cliente.getSenha())) {
+			  
+				  numero_conta = MapsDeClientes.get(i).getContaBancaria().getNumero_conta();
+				  
+			  break; 
+			  }
+			 
+			  }
+		  
+		  cliente = new Cliente().acesso(numero_conta, MapsDeClientes);
+		  
+		  return cliente;
+		  
+		//  return (Cliente) new Cliente().acesso(numero_conta, MapsDeClientes);
+		  
+	  }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 
 }
