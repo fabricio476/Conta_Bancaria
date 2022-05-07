@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import up.edu.ctup.model.Cliente;
 import up.edu.ctup.model.Debito;
+import up.edu.ctup.model.Pessoa;
 import up.edu.ctup.model.Poupanca;
 
 
@@ -135,13 +136,13 @@ public class ControllerContaBancariaCliente {
 			 
 			  }
 		  
-		  cliente = new Cliente().acesso(numero_conta, MapsDeClientes);
+		 
 		  
 		  
 		  
-		  return cliente;
+		  return ( cliente = (Cliente) new Cliente().acesso(numero_conta, MapsDeClientes) );
 		  
-		//  return (Cliente) new Cliente().acesso(numero_conta, MapsDeClientes);
+		
 		  
 	  }
 	  

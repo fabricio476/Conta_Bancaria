@@ -11,6 +11,6 @@ public interface PermitirAcesso {
 	/*metodo para fazer altenticação*/
 	public boolean autenticar(HashMap<Integer, Cliente> dados);
 	
-	public Cliente acesso(Integer numero_conta, HashMap<?, ?> dados);
+	public Pessoa acesso(Integer numero_conta, HashMap<Integer, ?> dados);
 
 }

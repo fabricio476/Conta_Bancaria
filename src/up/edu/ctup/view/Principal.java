@@ -6,6 +6,7 @@ import java.util.Scanner;
 import up.edu.ctup.controller.ControllerContaBancariaCliente;
 import up.edu.ctup.model.Cliente;
 import up.edu.ctup.model.ContaBancaria;
+import up.edu.ctup.model.Pessoa;
 
 
 public class Principal {
@@ -88,22 +89,62 @@ public class Principal {
 				
 				System.out.println("Nome : "+cliente.getNome() + " | Numero Conta : "+ cliente.getContaBancaria().getNumero_conta());
 				
+				menu_Cliente(); // segundo menu dentro da conta do cliente 
+				
 			}else {
 				
 				System.err.println("\t ** Perfil Admin **\n");
 				
-				System.out.println("Qual o numero da conta do cliente?");
+				System.out.println("Qual o NUMERO da conta do cliente?");
 				Integer nConta = scan.nextInt();
 				
+				cliente =  (Cliente) new Cliente().acesso(nConta, ControllerContaBancariaCliente.getClientes());
+				
+				if(cliente == null) {
+					
+					System.err.println("Usuario não encontrado !!\n");
+				}else {
+					int salir=0;
+					
+					do {
+					System.out.println("Nome : "+cliente.getNome() + " | Numero Conta : "+ cliente.getContaBancaria().getNumero_conta());
+					
+					System.out.println("1 - Bloquear Conta");
+					System.out.println("2 - Ajustar Limite");
+					System.out.println("3 - Excluir Conta ");
+					System.out.println("4 - Enviar Mensagem");
+					System.out.println("5 - Sair");
+					int ap = scan.nextInt();
+					
+					switch (ap) {
+					case 1:
+						
+						break;
+						
+                      case 5:
+						salir =7;
+						break;
+
+					default:
+						salir =7;
+						break;
+					}
+					
+					
+					
+					
+					}while(salir != 7);
+					
+					
+				}
 				
 				
-				cliente = new Cliente().acesso(nConta, ControllerContaBancariaCliente.getClientes());
 				
 			}
 			
 			
 			
-				menu_Cliente(); // segundo menu dentro da conta do cliente 
+				
 				
 			}else {
 				

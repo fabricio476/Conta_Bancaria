@@ -73,7 +73,7 @@ public class Cliente extends Pessoa implements PermitirAcesso{
 
 
 	@Override
-	public Cliente acesso(Integer numero_conta,HashMap<?, ?> dados) {
+	public Pessoa acesso(Integer numero_conta,HashMap<Integer, ?> dados) {
 		
 		if( dados.containsKey(numero_conta)) {
 			
