@@ -30,10 +30,12 @@ public class Principal {
 		
 		int op=0,sair=0;
 		do {
-			
-		System.out.println("1- Criar Conta");
-		System.out.println("2- Login Cliente");
-		System.out.println("3- sair");
+		
+		System.out.println("\t------------------------------");	
+		System.out.println("\t 1- Criar Conta");
+		System.out.println("\t 2- Login Cliente");
+		System.out.println("\t 3- sair");
+		System.out.println("\t------------------------------");	
 		op = scan.nextInt();
 		
 		if(op == 1) {
@@ -171,13 +173,14 @@ public class Principal {
 		int sair=0;
 		
 		do {
-		System.out.println("2- Depositar");
-		System.out.println("3- Sacar");
-		System.out.println("4- Saldo");
-		System.out.println("5- tranferir");
-		System.out.println("6- Mostrar Minhas Informações");
-		System.out.println("7- sair");
-		
+		System.out.println("\t =====================================");	
+		System.out.println("\t 2- Depositar");
+		System.out.println("\t 3- Sacar");
+		System.out.println("\t 4- Saldo");
+		System.out.println("\t 5- tranferir");
+		System.out.println("\t 6- Mostrar Minhas Informações");
+		System.out.println("\t 7- sair");
+		System.out.println("\t =====================================");	
 		int op = scan.nextInt();
 		
 		
@@ -271,6 +274,7 @@ public class Principal {
 			System.out.println("\t NOME: "+ cliente.getNome());
 			System.out.println("\t EMAIL:"+ cliente.getEmail());
 			System.out.println("\t NUMERO CONTA :" + cliente.getContaBancaria().getNumero_conta());
+			System.out.println("\n XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \n");
 			
 			
 		break;
