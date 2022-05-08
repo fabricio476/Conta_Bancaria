@@ -1,5 +1,7 @@
 package up.edu.ctup.model;
 
+import up.edu.ctup.controller.ControllerContaBancariaCliente;
+
 public abstract class Conta {
 	
 	protected String Tipo;
@@ -70,6 +72,34 @@ public abstract class Conta {
     	
 		
 	}
+    
+    public void transferir_dinheiro(float valor, int chave_pix) {
+    	
+          if(valor <= this.saldo && valor >0) {
+        	  
+        	  if(enviar_saldo(chave_pix,valor)) {
+        		  
+        		  this.saldo -= valor;
+        		  
+        	  }    
+		 }
+    }
+    
+    
+    private boolean enviar_saldo(int pix, float valor) {
+    	
+    	boolean resposta= false;
+    	
+    	if(ControllerContaBancariaCliente.getClientes().get(pix) != null) {
+    		
+        ControllerContaBancariaCliente.getClientes().get(pix).getContaBancaria().getContascliente().get(1).depositar_dinheiro(valor);
+        
+        resposta = true;
+    		
+    	}
+    	
+    	return resposta;
+    }
 	
 	
 

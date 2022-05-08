@@ -187,18 +187,18 @@ public class Principal {
 			
 			float valor = cliente.getContaBancaria().getContascliente().get(1).getSaldo();
 			
-			System.out.println("Qual o Valor do deposito?");
+			System.out.println("Qual o Valor do DEPOSITO?");
 			cliente.getContaBancaria().getContascliente().get(1).depositar_dinheiro(scan.nextFloat());
 			
 			
 			
 			if(valor != cliente.getContaBancaria().getContascliente().get(1).getSaldo() ) {
 				
-				System.out.println("Deposito Realizado com Sucesso");
+				System.out.println("DEPOSITO Realizado com Sucesso");
 				
 			}else {
 				
-				System.err.println("Falha ao Realizar o Deposito ");
+				System.err.println("Falha ao Realizar o DEPOSITO ");
 				
 			}
 			
@@ -211,7 +211,7 @@ public class Principal {
 			
 			float valoor = cliente.getContaBancaria().getContascliente().get(1).getSaldo();
 			
-			System.out.println("Informe o Valor do Saque ");
+			System.out.println("Informe o Valor do SAQUE ");
 			cliente.getContaBancaria().getContascliente().get(1).sacar_dinheiro(scan.nextFloat());
 			
 			if(valoor > cliente.getContaBancaria().getContascliente().get(1).getSaldo()) {
@@ -241,6 +241,25 @@ public class Principal {
 		
 		case 5:
 			
+			float saldoo = cliente.getContaBancaria().getContascliente().get(1).getSaldo();
+			
+			System.out.println("Qual o VALOR para TRANFERIR");
+			float vallor = scan.nextFloat();
+			
+			System.out.println("Informe a CHAVE do PIX ");
+			int pix = scan.nextInt();
+			
+			cliente.getContaBancaria().getContascliente().get(1).transferir_dinheiro(vallor, pix);
+			
+			if(saldoo > cliente.getContaBancaria().getContascliente().get(1).getSaldo()) {
+				
+				System.out.println("TRANSFERENCIA realizada com Sucesso !!");
+				
+			}else {
+				
+				System.err.println("Erro ao FAZER TRANSFERENCIA");
+					
+			}
 			
 			
 		break;
@@ -248,7 +267,10 @@ public class Principal {
 			
 		case 6:
 			
-			
+			System.out.println("\n XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \n");
+			System.out.println("\t NOME: "+ cliente.getNome());
+			System.out.println("\t EMAIL:"+ cliente.getEmail());
+			System.out.println("\t NUMERO CONTA :" + cliente.getContaBancaria().getNumero_conta());
 			
 			
 		break;
